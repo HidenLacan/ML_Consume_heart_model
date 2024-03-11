@@ -33,8 +33,16 @@ class consume_api(View):
         
         respuesta = requests.post('http://54.145.45.183:8000/api/prediction/',json=datos_api)
         if respuesta.status_code == 200:
+            
             resultado = respuesta.json()
-            return render(request,'resultado.html',{"resultado":resultado})
+            
+            resultado = resultado['Nivel de riesgo']
+            
+            resultado= resultado * 2.17
+            context = {"resultado": resultado}
+            
+            print(f'{resultado}')
+            return render(request,'test.html',context)
         else :
             return render(request, 'error.html',{'error',respuesta.status_code})
             
