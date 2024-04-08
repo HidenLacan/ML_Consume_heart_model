@@ -5,10 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Heart Diseases</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </head>
 <body>
     
   {% block content  %}{% endblock  %}
-      
+
+
+
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var prediction = {{ resultado }};
+    var myChart = new Chart(ctx, {
+        type: 'pie', // Cambiamos 'doughnut' por 'pie'
+        data: {
+            labels: ['Predicción', 'Restante'],
+            datasets: [{
+                data: [prediction, 100 - prediction],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: false,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Predicción en Porcentaje'
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
