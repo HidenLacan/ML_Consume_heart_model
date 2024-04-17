@@ -35,7 +35,9 @@
             }]
         },
         options: {
-            responsive: false,
+            responsive: true,
+            maintainAspectRatio:true,
+            aspectRatio:1,
             legend: {
                 position: 'top',
             },
@@ -49,6 +51,95 @@
             }
         }
     });
+</script>
+<script>
+    var ctx = document.getElementById('myCharttwo').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line', // Cambiamos 'doughnut' por 'pie'
+        data: {
+            labels: ['2017','2018','2019','2020','2021','2022','2023'],
+            datasets: [{
+                
+                label:'Defunciones en el year',
+                data: [65,59,80,81,56,55,40],
+                borderColor:'rgba(54, 162, 235, 1)',
+                tension: 0.1
+            },
+            {
+                
+                label:'Defunciones e yean elr',
+                data: [265,259,280,181,156,255,140],
+                borderColor:'rgba(54, 162, 235, 1)',
+                tension: 0.1
+            },
+            
+            
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio:true,
+            aspectRatio:1,
+            legend: {
+                position: 'top',
+            },
+
+            plugins:{
+                title:{
+                display: true,
+                text: 'Defunciones por enfermedades cardiacas'
+              }
+            }
+            ,
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        }
+    });
+
+
+</script>
+<script>
+    var ctx = document.getElementById('myChartthree').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut', // Cambiamos 'doughnut' por 'pie'
+        data: {
+            labels: ['Man','Women'],
+            datasets: [{
+                
+                label:'DISTRIBUCIÓN PORCENTUAL DE DEFUNCIONES REGISTRADAS',
+                data: [22319655.6,17806544.3],
+                backgroundColor: ['rgb(255, 99, 132)',
+                'rgb(54, 162, 235)'],
+                tension: 0.1
+            },
+            
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio:true,
+            aspectRatio:1,
+            legend: {
+                position: 'top',
+            },
+
+            plugins:{
+                title:{
+                display: true,
+                text: 'Defunciones por enfermedades cardiacas'
+              }
+            }
+            ,
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        }
+    });
+
+
 </script>
 
 </body>
