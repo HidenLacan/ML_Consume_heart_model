@@ -3,13 +3,6 @@
 {% block content %}
 
 <div class="relative isolate overflow-hidden  py-24 sm:py-32">
-    {% comment %} <img src="https://images.pexels.com/photos/17485744/pexels-photo-17485744/free-photo-of-abstracto-tecnologia-investigacion-digital.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class=" opacity-75 absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"> 
-    <div class=" bg-gray-700 hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
-      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
-    <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
-      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div> {% endcomment %}
     <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="flex-wrap">
         <!--column 1--->
@@ -105,6 +98,60 @@
                      <option value="0">No Presenta</option>
                    </select> 
             </div>
+            <div>
+              <label for="EDADMAYOR" class="block text-sm font-medium text-gray-700">EDAD MAYOR A 65 AÑOS</label>
+                 <select id="EDADMAYOR" name="EDADMAYOR" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50" required>
+                   <option value="1">SI</option>
+                   <option value="0">NO</option>
+                 </select> 
+          </div>
+
+          <div>
+              <label for="FACTORES" class="block text-sm font-medium text-gray-700">PRESENTA 3 0 MÁS FACTORES DE RIESGO(Hipertensión, hipercolesterolemia, diabetes, antecedentes familiares de enfermedad coronaria o fumador actual.)</label>
+                 <select id="FACTORES" name="FACTORES" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50" required>
+                   <option value="1">Presenta</option>
+                   <option value="0">No Presenta</option>
+                 </select> 
+          </div>
+          <div>
+            <label for="AAS" class="block text-sm font-medium text-gray-700">USO DE AAS EN LOS ÚLTIMOS 7 DÍAS</label>
+               <select id="AAS" name="AAS" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50" required>
+                 <option value="1">Presenta</option>
+                 <option value="0">No Presenta</option>
+               </select> 
+        </div>
+
+        <div>
+            <label for="ANGINAGRAVE" class="block text-sm font-medium text-gray-700">ANGINA GRAVE (2 o más episodios en 24 horas)</label>
+               <select id="ANGINAGRAVE" name="ANGINAGRAVE" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50" required>
+                 <option value="1">Presenta</option>
+                 <option value="0">No Presenta</option>
+               </select> 
+        </div>
+        <div>
+          <label for="ST" class="block text-sm font-medium text-gray-700">Cambios del ST en el ECG mayores a 0,5 mm</label>
+             <select id="ST" name="ST" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50" required>
+               <option value="1">Presenta</option>
+               <option value="0">No Presenta</option>
+             </select> 
+      </div>
+
+      <div>
+          <label for="MARCADORPOSITIVO" class="block text-sm font-medium text-gray-700">Marcador cardíaco positivo</label>
+             <select id="MARCADORPOSITIVO" name="MARCADORPOSITIVO" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50" required>
+               <option value="1">Presenta</option>
+               <option value="0">No Presenta</option>
+             </select> 
+      </div>
+      <div>
+        <label for="CAD" class="block text-sm font-medium text-gray-700">CAD conocida (estenosis MAYOR A 50%)</label>
+           <select id="CAD" name="CAD" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-300 focus:ring focus:ring-red-200 focus:ring-opacity-50" required>
+             <option value="1">Presenta</option>
+             <option value="0">No Presenta</option>
+           </select> 
+    </div>
+
+    
 
             <div class="md:col-span-2">
                 <button type="submit" 
@@ -112,8 +159,7 @@
                     Predecir
                 </button>
             </div>  
-        </form>
- 
+          </form>
        </div>
       </div>
 
@@ -136,6 +182,64 @@
     <div>
       <div class="w-full max-w-md mx-auto">
         <canvas id="myChartthree"></canvas>
+      </div>
+    </div>
+
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex-wrap">
+        <!--column 1--->
+        <div class="w-full p-6">
+          <h2 class="text-4xl font-bold tracking-tight text-black sm:text-6xl">TIMI</h2>
+          <p class=" text-lg leading-8 text-black">Puede usarse para ayudar a estratificar el riesgo de pacientes con presunto dolor torácico isquémico.  Sin embargo, originalmente se derivó en pacientes con angina inestable confirmada o infarto de miocardio sin elevación del segmento ST.</p>
+
+        </div>
+
+        <div class="text-center mb-8 mt-10">
+          <h1 class="text-4xl font-bold text-black">Puntaje de riesgo </h1>
+              <h1 class="text-4xl font-bold text-black">
+                {{ timi_result_valules }}
+
+                {% if timi_result_valules == 0 %}
+                  <h1 class="text-xl font-bold text-black">0 puntos
+                    Riesgo del 5% a los 14 días de: mortalidad por todas las causas, IM nuevo o recurrente, o isquemia recurrente grave que requiera revascularización urgente.</h1>
+                {% elif timi_result_valules == 1 %} 
+                  <h1 class="text-xl font-bold text-black">1 punto 
+                    Riesgo del 5% a los 14 días de: mortalidad por todas las causas, IM nuevo o recurrente, o isquemia recurrente grave que requiera revascularización urgente.</h1>
+                {% elif timi_result_valules == 2 %} 
+                  <h1 class="text-xl font-bold text-black">2 puntos
+                    Riesgo del 8% a los 14 días de: mortalidad por todas las causas, IM nuevo o recurrente, o isquemia recurrente grave que requiera revascularización urgente.</h1>
+                {% elif timi_result_valules == 3 %} 
+                  <h1 class="text-xl font-bold text-black">3 puntos
+                    Riesgo del 13% a los 14 días de: mortalidad por todas las causas, IM nuevo o recurrente, o isquemia recurrente grave que requiera revascularización urgente.</h1>
+                {% elif timi_result_valules == 4 %} 
+                  <h1 class="text-xl font-bold text-black">4 puntos
+                    Riesgo del 20% a los 14 días de: mortalidad por todas las causas, IM nuevo o recurrente, o isquemia recurrente grave que requiera revascularización urgente.</h1>
+                {% elif timi_result_valules == 5 %} 
+                  <h1 class="text-xl font-bold text-black">5 puntos
+                    Riesgo del 26% a los 14 días de: mortalidad por todas las causas, IM nuevo o recurrente, o isquemia recurrente grave que requiera revascularización urgente.</h1>
+                {% elif timi_result_valules == 6 %} 
+                  <h1 class="text-xl font-bold text-black">6 puntos
+                    41% de riesgo a los 14 días de: mortalidad por todas las causas, IM nuevo o recurrente, o isquemia recurrente grave que requiera revascularización urgente.</h1>
+                {% else %}
+                  <h1 class="text-xl font-bold text-black">7 puntos
+                    41% de riesgo a los 14 días de: mortalidad por todas las causas, IM nuevo o recurrente, o isquemia recurrente grave que requiera revascularización urgente.</h1>
+                {% endif %}
+                
+
+          </h1>  
+      </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4">
+        <!--column 2-->
+        <div class="w-full px3">
+          <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-black ">TIMI Puntaje de Riesgo</h1>
+          </div>
+
+         
+       </div>
       </div>
     </div>
 
