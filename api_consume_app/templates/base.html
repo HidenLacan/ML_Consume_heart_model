@@ -14,7 +14,7 @@
 
 
 
-  <script>
+<script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var resultado = {{ resultado }};
     var prediction =  Math.ceil(resultado)
@@ -101,7 +101,6 @@
         }
     });
 
-
 </script>
 <script>
     var ctx = document.getElementById('myChartthree').getContext('2d');
@@ -140,9 +139,102 @@
             }
         }
     });
-
-
 </script>
+<script>
+    function calculaeDemographicAverage(scoresArray){
+        const sum = scoresArray.reduce((accumuator,currentValue) => accumuator +currentValue , 0);
+        return sum / scoresArray.length;
+    }
+    
+    const demographicScores = [60,65,70,55,85,90,75,80,65,70];
+    const demographicAverage = calculaeDemographicAverage(demographicScores);
+
+    var patientScore = {{resultado}}
+    var ctx = document.getElementById('myChartfour').getContext('2d');
+    var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Patient Score', 'Demographic Average'],
+    datasets: [{
+      label: 'Risk Score',
+      data: [patientScore, demographicAverage],
+      backgroundColor: [
+        'rgba(54, 162, 235, 1)', // Patient score color
+        'rgba(255, 206, 86, 1)'  // Demographic average color
+      ],
+      borderColor: [
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    },
+    responsive: true,
+    maintainAspectRatio:true,
+    aspectRatio:1,
+    legend: {
+        position: 'top',
+    },
+    plugins:{
+        title:{
+        display: true,
+        text: 'Patient vs Demographic Average Risk Score'
+      }
+    },
+    animation: {
+        animateScale: true,
+        animateRotate: true
+    }
+        }
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('myChartfive').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut', // Cambiamos 'doughnut' por 'pie'
+        data: {
+            labels: ['Hombre','Mujer'],
+            datasets: [{
+                label:'Defunciones',
+                data: [2722,2107],
+                backgroundColor: ['rgb(255, 99, 132)',
+                'rgb(54, 162, 235)'],
+                tension: 0.1
+            },
+            
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio:true,
+            aspectRatio:1,
+            legend: {
+                position: 'top',
+            },
+
+            plugins:{
+                title:{
+                display: true,
+                text: 'Tasa de defunciones por enfermedades del corazon por sexo'
+              }
+            }
+            ,
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        }
+    });
+</script>
+
+
 
 </body>
 </html>
