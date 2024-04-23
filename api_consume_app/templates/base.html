@@ -285,13 +285,14 @@
 <script>
     var ctx = document.getElementById('myChartfive').getContext('2d');
     var timi_result=  {{timi_result_valules}}
+    var timi_comparative = 17 - timi_result
     var myChart = new Chart(ctx, {
         type: 'doughnut', // Cambiamos 'doughnut' por 'pie'
         data: {
             labels: ['Emergencia','Incertidumbre'],
             datasets: [{
                 label:'Resultado TIMI',
-                data: [timi_result,17],
+                data: [timi_result,timi_comparative],
                 backgroundColor: ['rgba(255, 0, 0, 0.7)',
                 'rgba(0, 120, 215, 0.7)'],
                 tension: 0.1
