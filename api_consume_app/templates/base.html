@@ -6,12 +6,49 @@
     <title>Prediction Heart Diseases</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
 </head>
 <body>
+
+<title>Medical Data Analytics</title>
+<nav class="bg-black p-4">
+    <div class="container mx-auto flex justify-center">
+      <span class="text-white font-semibold text-xl">Predicción Médica</span>
+    </div>
+  </nav>
+
+
+
     
   {% block content  %}{% endblock  %}
 
+  <footer style="background-color: #f5f5f5; color: #333; padding: 20px; font-family: Arial, sans-serif; font-size: 14px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto;">
+        <!-- Logo and mission statement -->
+        <div>
+            <img src="logo.png" alt="Institution Logo" style="max-width: 150px; margin-bottom: 10px;">
+            <p>Mejorando la toma de decisiones médicas con Análisis de Datos</p>
+        </div>
+
+
+
+        <!-- Quick Links -->
+        <div>
+            <strong>Recursos Bibliográficos</strong>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="/about" style="color: #333; text-decoration: none;">TIMI</a></li>
+                <li><a href="/methodology" style="color: #333; text-decoration: none;">INEGI</a></li>
+                <li><a href="/resources" style="color: #333; text-decoration: none;">Cardíología en NL.</a></li>
+                <li><a href="/contact" style="color: #333; text-decoration: none;">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="text-align: center; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 20px;">
+        <p>&copy; 2024 Análisis Prédictivo Médico. Derechos Reservados.</p>
+    </div>
+</footer>
 
 
 <script>
@@ -25,12 +62,12 @@
             datasets: [{
                 data: [prediction, 100 - prediction],
                 backgroundColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 99, 132, 1)'
+                    'rgba(255, 0, 0, 0.7)',
+                    'rgba(0, 120, 215, 0.7)'
                 ],
                 borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 99, 132, 1)'
+                    'rgba(255, 0, 0, 0.7)',
+                    'rgba(0, 120, 215, 0.7)'
                 ],
                 borderWidth: 1
             }]
@@ -42,7 +79,7 @@
             plugins:{
                 title:{
                 display: true,
-                text: 'Predicción de Riesgo'
+                text: 'Predicción de Re-ingreso'
               }
             }
             ,
@@ -63,16 +100,16 @@
                 
                 label:'Tasas todo el año',
                 data: [113.5,118.5,122.7,173.0,176.6,155.5],
-                borderColor:'rgba(54, 162, 235, 1)',
-                backgroundColor:'rgba(54, 162, 235, 1)',
+                borderColor:'rgba(0, 128, 0, 0.7)',
+                backgroundColor:'rgba(0, 128, 0, 0.7)',
                 tension: 0.1
             },
             {
                 
                 label:'Tasas de enero-junio',
                 data: [57.6,61.1,62.7,77.3,89.2,82.4,75.3],
-                borderColor:'rgba(255, 99, 132, 1)',
-                backgroundColor:'rgba(255, 99, 132, 1)',
+                borderColor:'rgba(255, 165, 0, 0.7)',
+                backgroundColor:'rgba(255, 165, 0, 0.7)',
                 tension: 0.1
             },
             
@@ -90,7 +127,7 @@
             plugins:{
                 title:{
                 display: true,
-                text: 'Tasa de defunciones por cada mil habitantes'
+                text: 'Tasa de defunciones por cada mil habitantes(Nivel Nacional)'
               }
             }
             ,
@@ -111,8 +148,8 @@
             datasets: [{
                 label:'Defunciones',
                 data: [2722,2107],
-                backgroundColor: ['rgb(255, 99, 132)',
-                'rgb(54, 162, 235)'],
+                backgroundColor: ['rgba(255, 165, 0, 0.7)',
+                'rgba(0, 128, 0, 0.7)'],
                 tension: 0.1
             },
             
@@ -146,7 +183,56 @@
         return sum / scoresArray.length;
     }
     
-    const demographicScores = [60,65,70,55,85,90,75,80,65,70];
+    const demographicScores = [
+        59.14755164888538, 39.66152353030637, 44.787213127339314, 69.93576773106663,
+        44.36030974105863, 54.02185714797289, 54.427722798500724, 43.11580165644346,
+        58.90936293292815, 37.24779898806412, 68.10442586513896, 19.912302178070732,
+        58.104724729172624, 45.15359276429231, 45.59935387268792, 13.725291696346366,
+        31.94378151802574, 44.11962804867859, 31.318815998534674, 26.777769841591255,
+        68.27673987299738, 34.652003991612, 51.72143843234871, 28.04019307499997,
+        47.93867374373266, 51.29925382209526, 47.93867374373266, 23.774449497675725,
+        34.88695221983279, 49.18565477021684, 28.04019307499997, 24.185789266720104,
+        15.754600069734915, 47.687915203056235, 57.42873446417966, 47.695366188450386,
+        24.689644088602574, 51.588471911016306, 52.57555697165318, 61.48296747140328,
+        43.29408692637228, 39.61029370429616, 35.323183099991084, 43.29408692637228,
+        65.36436864129999, 43.29408692637228, 41.59734792841879, 18.669127139401848,
+        51.662472683366246, 56.37059590916881, 30.035077089312473, 61.61334661585464,
+        30.795914055263005, 27.276788813077413, 47.158657680935946, 52.28094024830922,
+        33.96281632569364, 25.999368335051727, 61.6747884846899, 23.92289536086173,
+        52.28094024830922, 61.6747884846899, 47.21641594330248, 51.36686593707371,
+        32.48169464966592, 65.95425695120878, 18.981104068545335, 47.77700887509968,
+        16.349534591598, 69.90857245547134, 49.564823018030964, 29.680110895214504,
+        45.30151195985379, 56.747951203256605, 57.81069229367511, 52.519319754184224,
+        47.68215627174675, 45.30151195985379, 47.695366188450386, 33.96281632569364,
+        46.25076831101192, 54.32378887306931, 41.35698939714308, 45.541122996537794,
+        46.032119590671456, 24.45822164638838, 40.911017199736214, 20.72774024120164,
+        40.55025350846385, 50.533922423573465, 48.58893066773574, 49.39070851457506,
+        47.439388957778405, 47.439388957778405, 50.269949151305305, 52.077949975662406,
+        49.670108923145, 42.42463018636119, 40.27838012734683, 47.41802573236338,
+        50.83979582040219, 49.668655745132064, 45.855603354117775, 53.446801120570896,
+        45.613277717744204, 46.43424760457133, 38.94557491827279, 43.27646315083067,
+        52.73647133612993, 50.26796430534605, 43.96900918215661, 46.151510711123116,
+        48.94034906608508, 40.09149544947647, 46.151510711123116, 44.43918108802019,
+        35.303329359579116, 49.232739192898975, 52.46541888838007, 38.08675028260806,
+        46.43424760457133, 49.72395346841466, 43.37991346523227, 48.86074167214846,
+        47.120801178505786, 40.72847440649141, 44.874417639372524, 41.49604930469819,
+        45.18098448623416, 47.48063633623248, 43.976551970164266, 42.78290230304591,
+        42.06297689515169, 49.56631250447597, 43.27646315083067, 52.756837238330405,
+        50.50499818831725, 49.31838585657586, 46.92758313507143, 46.28315414465111,
+        49.69995871332169, 52.0105294804753, 41.92802644870263, 54.42548338963044,
+        54.065302436326625, 40.48590247042624, 51.612859270758925, 54.42548338963044,
+        37.20998647826989, 39.59367485717905, 45.67519991365365, 35.97358066196369,
+        52.13970626506997, 43.516678955810434, 49.395633168542005, 49.668655745132064,
+        40.92826484454435, 37.47861043733508, 47.533710940302676, 44.52210056010209,
+        39.05800136334304, 45.818450480089304, 41.16156886493807, 39.18940387456384,
+        41.19425640735537, 49.968137835567326, 39.46803254555723, 42.881785505376094,
+        43.5577217311767, 46.258476964578904, 35.22541198497075, 49.40088535905686,
+        48.34022177478321, 52.00709159402937, 53.84657436527948, 59.88081982219559,
+        48.31880323642228, 57.163783330388256, 52.13970626506997, 49.486879514552484,
+        54.55030908997074, 48.86074167214846, 44.25831910729399, 54.42727270450138,
+        39.850602877850456, 49.668655745132064, 47.120801178505786, 49.808448513128894,
+        38.54364387821492, 37.96960213344997
+    ];
     const demographicAverage = calculaeDemographicAverage(demographicScores);
 
     var patientScore = {{resultado}}
@@ -154,17 +240,18 @@
     var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['Patient Score', 'Demographic Average'],
+    labels: ['Puntaje del Paciente', 'Promedio de Re-ingreso Demográfico'],
     datasets: [{
       label: 'Risk Score',
       data: [patientScore, demographicAverage],
       backgroundColor: [
-        'rgba(54, 162, 235, 1)', // Patient score color
-        'rgba(255, 206, 86, 1)'  // Demographic average color
+        'rgba(255, 0, 0, 0.7)', // Patient score color
+        'rgba(0, 128, 0, 0.7)'  // Demographic average color
       ],
       borderColor: [
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)'
+        'rgba(255, 0, 0, 0.7)',
+        'rgba(0, 128, 0, 0.7)'
+        
       ],
       borderWidth: 1
     }]
@@ -184,7 +271,7 @@
     plugins:{
         title:{
         display: true,
-        text: 'Patient vs Demographic Average Risk Score'
+        text: 'Paciente vs Puntaje de Riesgo Promedio de la Población'
       }
     },
     animation: {
@@ -197,15 +284,16 @@
 
 <script>
     var ctx = document.getElementById('myChartfive').getContext('2d');
+    var timi_result=  {{timi_result_valules}}
     var myChart = new Chart(ctx, {
         type: 'doughnut', // Cambiamos 'doughnut' por 'pie'
         data: {
-            labels: ['Hombre','Mujer'],
+            labels: ['Emergencia','Incertidumbre'],
             datasets: [{
-                label:'Defunciones',
-                data: [2722,2107],
-                backgroundColor: ['rgb(255, 99, 132)',
-                'rgb(54, 162, 235)'],
+                label:'Resultado TIMI',
+                data: [timi_result,17],
+                backgroundColor: ['rgba(255, 0, 0, 0.7)',
+                'rgba(0, 120, 215, 0.7)'],
                 tension: 0.1
             },
             

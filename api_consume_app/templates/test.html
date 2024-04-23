@@ -8,16 +8,21 @@
         <!--column 1--->
         <div class="w-full p-6">
           <h2 class="text-4xl font-bold tracking-tight text-black sm:text-6xl">Predicciones</h2>
-          <p class=" text-lg leading-8 text-black">La prediccion sobre la residencia de infarto tiene como finalidad aportar una herramienta que permita enriquecer el criterio médico para fortalecer las posibles reencidencias de un paciente que ha presentado un paro cardíaco, situando la información en la población centralizada en México.</p>
+          <p class=" text-lg leading-8 text-black">
+            El propósito de este modelo de predicción es proporcionar una herramienta vital que mejore la toma de decisiones clínicas. Al centrarse en la incidencia de eventos cardíacos recurrentes, nuestro modelo aspira a ser un catalizador para una intervención médica más proactiva y precisa. Al utilizar algoritmos avanzados y un análisis detallado de los datos, el modelo puede identificar a aquellos pacientes con mayor riesgo de reingreso hospitalario después de haber sufrido un infarto.
+
+La justificación de este enfoque reside en su capacidad para fortalecer la prevención secundaria en cardiología. A través de la predicción precisa, podemos mejorar significativamente la calidad de vida de los pacientes, optimizando los recursos sanitarios y evitando la saturación de los servicios de emergencia. Con ello, no solo se beneficia el paciente individual, sino que se contribuye al bienestar del sistema de salud en su conjunto.
+          </p>
 
         </div>
 
-        <div class="text-center mb-8 mt-10">
-          <h1 class="text-4xl font-bold text-black">Resultado de la predicción: </h1>
-              <h1 id='resultado' class="text-4xl font-bold text-black">
-                  {{resultado}}  
-              </h1>  
-      </div>
+        <div class="max-w-sm mx-auto mt-10 mb-8 p-6 bg-white shadow-lg rounded-lg text-center">
+          <h1 class="text-4xl font-bold text-black mb-4">Porcentaje de Re-ingreso del paciente:</h1>
+          <h1 id='resultado' class="text-4xl font-bold text-black">
+              {{resultado}}
+          </h1>  
+        </div>
+        
       </div>
 
       <div class="grid grid-cols-1 gap-4">
@@ -197,15 +202,15 @@
       <div class="flex-wrap">
         <!--column 1--->
         <div class="w-full p-6">
-          <h2 class="text-4xl font-bold tracking-tight text-black sm:text-6xl">TIMI</h2>
-          <p class=" text-lg leading-8 text-black">Puede usarse para ayudar a estratificar el riesgo de pacientes con presunto dolor torácico isquémico.  Sin embargo, originalmente se derivó en pacientes con angina inestable confirmada o infarto de miocardio sin elevación del segmento ST.</p>
+          <h2 class="text-4xl font-bold tracking-tight text-black sm:text-6xl">TIMI (Thrombolysis in Myocardial Infarction)</h2>
+          <p class=" text-lg leading-8 text-black">El Índice TIMI, desarrollado originalmente para pacientes con angina inestable o infarto de miocardio sin elevación del segmento ST, es una herramienta valiosa para la estratificación del riesgo en pacientes que presentan síntomas de dolor torácico isquémico. Esta herramienta nos permite evaluar de manera más precisa y fundamentada el nivel de riesgo que enfrenta un paciente, facilitando así decisiones clínicas más informadas y dirigidas. El uso de TIMI ayuda a los profesionales médicos a determinar la necesidad de intervenciones terapéuticas más agresivas o a optar por enfoques de tratamiento más conservadores, según el perfil de riesgo del paciente.</p>
 
         </div>
 
         <div class="text-center mb-8 mt-10">
-          <h1 class="text-4xl font-bold text-black">Puntaje de riesgo </h1>
+          <h1 class="text-4xl font-bold text-black">Interpretacion del puntaje de riesgo </h1>
               <h1 class="text-4xl font-bold text-black">
-                {{ timi_result_valules }}
+                
 
                 {% if timi_result_valules == 0 %}
                   <h1 class="text-xl font-bold text-black">0 puntos
